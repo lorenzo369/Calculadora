@@ -1,0 +1,34 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="header :: copy"></head>
+
+<body>
+
+	<h1>Calculadora hecha con Spring Boot y Microservicios</h1>
+	<h3>Suma servicio</h3>
+	<form action="/suma">
+	  	Primer operando:<br>
+	  	<input type="number" name="operando1" value="0">
+	  	<br>
+	  	Segundo operando<br>
+	  	<input type="number" name="operando2" value="0">
+	  	<br><br>
+	  	<input type="submit" value="Submit">
+	</form>	
+	<hr>
+	<form action="/resta">
+	  	First number:<br>
+	  	<input type="number" name="restador1" value="0">
+	  	<br>
+	  	Second number<br>
+	  	<input type="number" name="restador2" value="0">
+	  	<br><br>
+	  	<input type="submit" value="Submit">
+	</form>	
+
+	<div th:replace="footer :: copy"></div>
+
+</body>
+</html>
