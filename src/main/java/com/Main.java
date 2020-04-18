@@ -13,6 +13,7 @@ public class Main {
 		switch (args.length) {
 		case 2:
 			System.setProperty("server.port", args[1]);
+			break;
 		case 1:
 			nombreServidor = args[0].toLowerCase();
 			break;
