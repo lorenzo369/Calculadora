@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -24,7 +25,7 @@ public class WebCalculoController {
 		this.restaService = restaService;
 	}
 
-	@RequestMapping("/suma")
+	@GetMapping("/suma")
 	public String doSuma(@RequestParam(defaultValue="0") String operando1,
 			@RequestParam(defaultValue="0") String operando2,
 			Model model) {
@@ -37,7 +38,7 @@ public class WebCalculoController {
 		return "suma";
 	}
 
-	@RequestMapping("/resta")
+	@GetMapping("/resta")
 	public String doResta(@RequestParam(defaultValue="0") String restador1,
 			@RequestParam(defaultValue="0") String restador2,
 			Model modelo) {
