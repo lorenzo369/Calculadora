@@ -1,5 +1,7 @@
 package com;
 
+import static com.StaticFactoryBuilder.LOGGER;
+
 import com.registro.EurekaServer;
 import com.rest.suma.SumaServer;
 import com.rest.resta.RestaServer;
@@ -31,7 +33,7 @@ public class Main {
 		} else if (nombreServidor.equals("web")) {
 			WebServer.main(args);
 		} else {
-			System.out.println("Tipo de servidor desconocido: " + nombreServidor);
+			LOGGER.trace("Tipo de servidor desconocido: " + nombreServidor);
 		}
 	}
 }
