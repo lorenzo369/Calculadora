@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import static com.StaticFactoryBuilder.getLogger;
+import static com.StaticFactoryBuilder.LOGGER;
 
 import io.corp.calculator.TracerImpl;
 
@@ -18,7 +18,6 @@ public class WebCalculoController {
 	@Autowired
 	protected WebRestaService restaService;
 	
-	private TracerImpl logger = getLogger();
 	
 	public WebCalculoController(WebSumaService sumaService, WebRestaService restaService) {
 		this.sumaService = sumaService;
@@ -32,7 +31,7 @@ public class WebCalculoController {
 
 		String suma = sumaService.sumar(operando1, operando2);
 
-		logger.trace("Suma: " + suma);
+		LOGGER.trace("Suma: " + suma);
 		model.addAttribute("json", suma);
 
 		return "suma";
@@ -47,7 +46,7 @@ public class WebCalculoController {
 		
 		
 		
-		logger.trace("Resultado: " + resultado);
+		LOGGER.trace("Resultado: " + resultado);
 		modelo.addAttribute("json", resultado);
 
 		return "resultado";
