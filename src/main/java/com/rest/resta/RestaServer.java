@@ -1,6 +1,6 @@
 package com.rest.resta;
 
-import java.util.logging.Logger;
+import static com.StaticFactoryBuilder.LOGGER;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -11,11 +11,11 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableDiscoveryClient
 @ComponentScan
 public class RestaServer {
-	protected Logger logger = Logger.getLogger(RestaServer.class.getName());
 
 	public static void main(String[] args) {
 		System.setProperty("spring.config.name", "resta-server");
 
 		SpringApplication.run(RestaServer.class,args);
+		LOGGER.trace(RestaServer.class.getName());
 	}
 }
