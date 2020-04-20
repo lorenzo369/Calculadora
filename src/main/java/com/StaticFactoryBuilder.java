@@ -8,6 +8,7 @@ public class StaticFactoryBuilder {
 	private StaticFactoryBuilder(){
 		
 	}
+	//para crear una sola instancia al lugar de una en cada clase que la utiliza
 	public static final TracerImpl LOGGER = new TracerImpl();
 	
 	
