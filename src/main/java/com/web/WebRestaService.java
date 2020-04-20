@@ -2,7 +2,6 @@ package com.web;
 
 import static com.StaticFactoryBuilder.LOGGER;
 
-import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.stereotype.Service;
