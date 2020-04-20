@@ -1,6 +1,6 @@
 package com.web;
 
-import java.util.logging.Logger;
+import static com.StaticFactoryBuilder.LOGGER;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
@@ -16,12 +16,10 @@ public class WebSumaService {
 
 	protected String serviceUrl;
 
-	protected Logger logger = Logger.getLogger(WebSumaService.class
-			.getName());
-
 	public WebSumaService(String serviceUrl) {
 		this.serviceUrl = serviceUrl.startsWith("http") ? serviceUrl
 				: "http://" + serviceUrl;
+		LOGGER.trace(WebSumaService.class.getName());
 	}
 
 	public String sumar(String operando1, String operando2) {
